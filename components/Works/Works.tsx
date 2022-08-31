@@ -6,7 +6,7 @@ import ModalOnHover from "./ModalOnHover/ModalOnHover";
 
 function Works() {
   return (
-    <div className='max-w-[1300px] mx-auto w-full' id='#works'>
+    <div className='max-w-[1300px] mx-auto w-full' id='works'>
       <div className='flex flex-col gap-6 justify-center items-center h-full mt-24 mx-auto'>
         <h1 className='text-5xl py-4 font-semibold text-gradient animate-title'>
           Works

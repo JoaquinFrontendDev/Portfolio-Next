@@ -14,7 +14,7 @@ function ContactSocials() {
       </p>
       <div className='grid grid-cols-2 gap-8'>
         <Link href='https://github.com/SintaxisDev'>
-          <button className='w-[180px] h-[35px] relative bg-gray-800 mt-2 rounded-full text-slate-100 focus:outline-none hover:bg-gray-900'>
+          <button className='w-[180px] h-[35px] relative bg-[#333] mt-2 rounded-full text-slate-100 focus:outline-none hover:bg-[#222]'>
             <div className='flex items-center justify-between px-8'>
               <i className='devicon-github-original pr-4 border-r-2'></i>
               <span className='text-lg font-semibold tracking-wide'>

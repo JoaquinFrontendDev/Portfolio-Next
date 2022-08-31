@@ -4,7 +4,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class PortfolioDocument extends Document {
   render(): ReactElement {
     return (
-      <Html>
+      <Html className='scroll-smooth'>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

@@ -35,7 +35,7 @@ function Services() {
   return (
     <div
       className='h-full max-w-[1300px] mx-auto w-full flex justify-around flex-col flex-1'
-      id='#services'
+      id='services'
     >
       <div className='flex flex-col gap-6 justify-center items-center h-full mt-24 mx-auto'>
         <h1 className='text-5xl py-4 font-semibold bg-gradient-to-r bg-clip-text text-transparent from-blue-700 via-indigo-600 to-purple-700 animate-title'>
