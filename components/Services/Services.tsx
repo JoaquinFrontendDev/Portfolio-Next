@@ -60,8 +60,8 @@ function Services() {
           description={services[5].description}
           Icon={FireIcon}
         />
-        <TechaAndTools />
       </div>
+        <TechaAndTools />
     </div>
   );
 }

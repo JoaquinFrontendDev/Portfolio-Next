@@ -21,7 +21,7 @@ function TechaAndTools() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
   return (
-    <div>
+    <div className='h-full w-full'>
       <div className="mx-auto mt-24 flex h-full flex-col items-center justify-center gap-6">
         <h1 className="text-gradient animate-title py-4 text-5xl font-semibold">
           Tech and Tools
@@ -29,7 +29,7 @@ function TechaAndTools() {
         <CommandLineIcon className="h-12 w-12 animate-bounce text-blue-600" />
       </div>
       <div
-        className="flex h-[40vh] w-full flex-1 flex-col items-center gap-12"
+        className="flex h-full w-full flex-1 flex-col items-center gap-12"
         ref={ref}
       >
         <div className="mx-auto mt-10 flex w-4/5 flex-wrap items-center justify-evenly gap-8">

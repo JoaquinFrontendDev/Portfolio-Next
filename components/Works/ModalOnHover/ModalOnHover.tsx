@@ -10,7 +10,7 @@ interface ModalOnHoverProps {
 function ModalOnHover({title, description, github, link, Icon}) {
   return (
     <div className="absolute left-0 top-0 w-full h-full bg-gray-800/90 flex justify-between items-center flex-col rounded-[10px] transition duration-500 opacity-0 cursor-pointer hover:opacity-100">
-      <div className="flex flex-col w-3/5 mx-auto mt-8 lg:mt-24 gap-8 lg:gap-12 items-center justify-center text-white relative">
+      <div className="flex flex-col w-3/5 mx-auto mt-2 sm:mt-8 lg:mt-24 gap-8 lg:gap-12 items-center justify-center text-white relative">
         <h3 className="text-lg md:text-2xl lg:text-4xl">{title}</h3>
         <p className="text-[8px] md:text-xs lg:text-lg">{description}</p>
       </div>
