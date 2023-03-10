@@ -13,7 +13,7 @@ function ContactSocials() {
         in your head`}
       </p>
       <div className='grid grid-cols-2 gap-8'>
-        <Link href='https://github.com/SintaxisDev'>
+        <Link href='https://github.com/JoaquinFrontendDev'>
           <button className='w-[180px] h-[35px] relative bg-[#333] mt-2 rounded-full text-slate-100 focus:outline-none hover:bg-[#222]'>
             <div className='flex items-center justify-between px-8'>
               <i className='devicon-github-original pr-4 border-r-2'></i>
