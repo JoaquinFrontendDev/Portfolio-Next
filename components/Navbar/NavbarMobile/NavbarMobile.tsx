@@ -1,69 +1,34 @@
-import {
-  Bars3Icon,
-  BoltIcon,
-  BriefcaseIcon,
-  EnvelopeIcon,
-  HomeIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { mobileLinks } from "../../../constants/navbarLinks";
 
-interface NavbarMobileProps {
-  isOpen: boolean;
-  handleOpen: () => void;
-}
-
-function NavbarMobile({ isOpen, handleOpen }: NavbarMobileProps) {
+function NavbarMobile() {
   return (
     <>
-      <div
-        className="absolute top-[20%] left-6 flex cursor-pointer items-center justify-center rounded-xl border border-gray-200 bg-slate-100 p-2 focus:outline-none dark:border-gray-600 dark:bg-gray-700 md:hidden"
-        onClick={handleOpen}
-      >
-        <div className={`${isOpen ? "hidden" : "inline-flex"}`}>
-          <Bars3Icon className="h-[20px] w-[20px] font-semibold text-blue-700 dark:text-slate-100" />
-        </div>
-        <div className={`${isOpen ? "inline-flex" : "hidden"}`}>
-          <XMarkIcon className="h-[20px] w-[20px] font-semibold text-blue-700 dark:text-slate-100" />
-        </div>
+      <div className="fixed bottom-0 left-0 z-50 flex h-[55px] w-full items-center justify-around border-t border-gray-300 bg-white transition-transform duration-[400ms] ease-in-out dark:border-none dark:bg-[#191919] xl:hidden">
+        {mobileLinks.map(({ href, Icon, label }, index) => (
+          <Link href={href} key={index}>
+            <div className="navbar-link flex flex-col items-center">
+              <Icon className="h-6 w-6" />
+              <span className="text-xs">{label}</span>
+            </div>
+          </Link>
+        ))}
       </div>
-      <div
-        className={`absolute top-[80px] left-0 flex h-fit w-fit flex-col justify-start gap-2 rounded-tr-2xl rounded-br-2xl border border-gray-300 bg-white/95 py-12 pr-12 pl-6 text-left shadow-md transition-transform duration-[400ms] ease-in-out dark:bg-gray-700 ${
-          isOpen ? "translate-x-0" : "-translate-x-[100vw]"
-        }`}
-      >
-        <Link href="#home">
-          <a onClick={handleOpen} className="navbar-link-mobile">
-            <div className="flex items-center justify-start gap-8">
-              <HomeIcon className="h-[25px] w-[25px]" />
-              <span>Home</span>
-            </div>
-          </a>
-        </Link>
-        <Link href="#services">
-          <a onClick={handleOpen} className="navbar-link-mobile">
-            <div className="flex items-center justify-start gap-8">
-              <BoltIcon className="h-[25px] w-[25px]" />
-              <span>Services</span>
-            </div>
-          </a>
-        </Link>
-        <Link href="#works">
-          <a onClick={handleOpen} className="navbar-link-mobile">
-            <div className="flex items-center justify-start gap-8">
-              <BriefcaseIcon className="h-[25px] w-[25px]" />
-              <span>My Work</span>
-            </div>
-          </a>
-        </Link>
-        <Link href="#contact">
-          <a onClick={handleOpen} className="navbar-link-mobile">
-            <div className="flex items-center justify-start gap-8">
-              <EnvelopeIcon className="h-[25px] w-[25px]" />
-              <span>Contact</span>
-            </div>
-          </a>
-        </Link>
+      <div className="flex items-center gap-6 lg:hidden">
+        <a
+          href="https://github.com/JoaquinFrontendDev"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="devicon-github-plain navbar-text-hover dark:navbar-text-hover text-[30px] text-[#666] dark:text-[#A7A7A7]"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/joaquinretoladev/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="devicon-linkedin-plain navbar-text-hover dark:navbar-text-hover text-[30px] text-[#666] dark:text-[#A7A7A7]"></i>
+        </a>
       </div>
     </>
   );

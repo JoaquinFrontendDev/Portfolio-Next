@@ -4,55 +4,81 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Moon from "../../../public/assets/images/moon.png";
 import Sun from "../../../public/assets/images/sun.png";
+import { links } from "../../../constants/navbarLinks";
+import {useRouter} from "next/router";
 
 function NavbarDesktop() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const router = useRouter()
+
+  const toggleTheme = () => {
+    const newTheme = resolvedTheme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
   useEffect(() => {
-    setTheme("light");
+    const localTheme = localStorage.getItem("theme");
+    if (localTheme) {
+      setTheme(localTheme);
+    }
   }, []);
+
   return (
-    <>
-      <Link href="/">
-        <h1 className="absolute left-[20px] top-[50%] hidden -translate-y-[50%] cursor-pointer text-2xl font-semibold dark:text-slate-100 md:inline-flex">
-          Sintaxis<span className="font-normal text-blue-700">Dev</span>
-        </h1>
-      </Link>
+    <div className="z-50 mx-auto flex w-full max-w-[1300px] items-center justify-between py-3">
+      {/* Light/Dark Mode toggle */}
       <div
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="absolute top-[50%] right-[20px] flex -translate-y-[50%] cursor-pointer items-center rounded-xl border border-gray-200 bg-slate-100 p-2 dark:border-gray-600 dark:bg-gray-700"
+        onClick={toggleTheme}
+        className="h-10 w-10 cursor-pointer items-center rounded-xl border border-gray-200 bg-slate-100 p-2 dark:border-gray-600 dark:bg-gray-700"
       >
-        <div className="hidden dark:inline-flex">
-          <Image src={Sun} alt="sun-image" width={20} height={20} />
+        {resolvedTheme === "light" ? (
+          <Image src={Moon} alt="moon-image" width={25} height={25} />
+        ) : (
+          <Image src={Sun} alt="sun-image" width={25} height={25} />
+        )}
+      </div>
+      <div className="hidden gap-[51px] lg:flex">
+        {/* Navbar item listing */}
+        <div className="flex items-center gap-10">
+          <div className="hidden h-full w-full items-center justify-evenly md:inline-flex">
+            <ul className="flex list-none items-center justify-center transition duration-300 lg:gap-[67px]">
+              {links.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href}>
+                    <div
+                      className={
+                        router.pathname === link.href
+                          ? "navbar-link-desktop-active"
+                          : "navbar-link-desktop"
+                      }
+                    >
+                      {link.label}
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="inline-flex dark:hidden">
-          <Image src={Moon} alt="moon-image" width={20} height={20} />
+        {/* Socials */}
+        <div className="hidden items-center gap-6 lg:flex">
+          <a
+            href="https://github.com/JoaquinFrontendDev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="devicon-github-plain navbar-text-hover dark:navbar-text-hover text-[30px] text-[#666] dark:text-[#A7A7A7]"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/joaquinretoladev/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="devicon-linkedin-plain navbar-text-hover dark:navbar-text-hover text-[30px] text-[#666] dark:text-[#A7A7A7]"></i>
+          </a>
         </div>
       </div>
-      <div className="hidden h-full w-full items-center justify-evenly md:inline-flex">
-        <ul className="flex list-none items-center justify-center gap-10 font-semibold transition duration-300">
-          <li>
-            <Link href="#home">
-              <a className="navbar-link-desktop">Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="#services">
-              <a className="navbar-link-desktop">Services</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="#works">
-              <a className="navbar-link-desktop">My Work</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="#contact">
-              <a className="navbar-link-desktop">Contact</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </>
+    </div>
   );
 }
 

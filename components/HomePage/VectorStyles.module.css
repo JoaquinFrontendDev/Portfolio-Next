@@ -1,0 +1,69 @@
+.right-hand {
+  animation: type 500ms ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.left-hand {
+  animation: type 500ms ease-in-out infinite alternate-reverse;
+  transform-origin: center;
+}
+
+.clock-hand {
+  animation: clock 60s steps(60) infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.hair {
+  animation: hair 1s ease-in-out infinite alternate-reverse;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+.left-tree {
+  animation: tree 1.2s ease-in-out infinite alternate;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.right-tree {
+  animation: tree 1.2s ease-in-out infinite alternate-reverse;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes type {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(15deg);
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes hair {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(1.5%) rotateZ(0.5deg);
+  }
+}
+
+@keyframes tree {
+  from {
+    transform: rotateY(0deg) scaleX(1) skewY(0) skewX(0);
+  }
+  to {
+    transform: rotateY(15deg) scaleX(1.1) skewY(4deg) skewX(3deg);
+  }
+}

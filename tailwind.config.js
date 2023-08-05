@@ -44,14 +44,18 @@ module.exports = {
         typewriter: 'typewriter 5s steps(38) infinite'
       },
       fontFamily: {
-        OpenSans: ['Open Sans', 'sans-serif'],
+        DMSans: ['DM Sans', 'sans-serif'],
+        Poppins: ['Poppins', 'sans-serif'],
       },
       screens: {
         'sm': { min: '480px' },
         'md': { min: '700px' },
         'lg': { min: '960px' },
         'xl': { min: '1024px' },
-        '2xl': { min: '1280px' }
+        '2xl': { min: '1330px' }
+      },
+      boxShadow: {
+        'card': '2px 2px 100px 0px rgba(0, 0, 0, 0.20)'
       }
     },
     lineHeight: {

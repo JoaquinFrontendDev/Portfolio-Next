@@ -4,7 +4,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class PortfolioDocument extends Document {
   render(): ReactElement {
     return (
-      <Html className='scroll-smooth'>
+      <Html className="scroll-smooth">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -13,7 +13,7 @@ class PortfolioDocument extends Document {
             data-crossorigin
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
           <link
