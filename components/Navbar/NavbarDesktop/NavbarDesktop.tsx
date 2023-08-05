@@ -32,9 +32,21 @@ function NavbarDesktop() {
         className="h-10 w-10 cursor-pointer items-center rounded-xl border border-gray-200 bg-slate-100 p-2 dark:border-gray-600 dark:bg-gray-700"
       >
         {resolvedTheme === "light" ? (
-          <Image src={Moon} alt="moon-image" width={25} height={25} />
+          <Image
+            src={Moon}
+            alt="moon-image"
+            width={25}
+            height={25}
+            draggable={false}
+          />
         ) : (
-          <Image src={Sun} alt="sun-image" width={25} height={25} />
+          <Image
+            src={Sun}
+            alt="sun-image"
+            width={25}
+            height={25}
+            draggable={false}
+          />
         )}
       </div>
       <div className="hidden gap-[51px] lg:flex">

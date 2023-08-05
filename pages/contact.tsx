@@ -10,7 +10,7 @@ function Contact() {
           <div className="text-[35px] font-bold text-[#1E0E62] dark:text-[#CCC] xl:text-[50px]">
             For any questions please mail me:
           </div>
-          <div className="text-gradient break-all text-[35px] font-semibold xl:text-[50px]">
+          <div className="text-gradient break-all text-[35px] font-semibold xl:text-[50px] select-text selection:text-green-400">
             joaquin.retola@gmail.com
           </div>
         </div>
@@ -20,6 +20,7 @@ function Contact() {
             layout="fill"
             alt="mail-me-image"
             className="mt-20"
+            draggable={false}
           />
         </div>
       </div>

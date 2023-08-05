@@ -20,6 +20,7 @@ const WorkCard = ({ id, img, title, description, stack, link, github }) => {
         objectPosition="center"
         unoptimized={true}
         className="rounded-t-[20px]"
+        draggable={false}
       />
       <div className="relative flex flex-col rounded-b-[20px] bg-[#FFFFFF] p-[30px] shadow-card dark:bg-[#363636]">
         <div className="absolute right-2 top-2 rounded-lg bg-black px-3 py-2 font-mono text-sm font-extrabold text-white shadow-card dark:bg-white dark:text-black">{`0${id.toString()}`}</div>
