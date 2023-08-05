@@ -2,14 +2,14 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import Moon from "../../../public/assets/images/moon.png";
-import Sun from "../../../public/assets/images/sun.png";
+import Moon from "../../../public/assets/images/moon.webp";
+import Sun from "../../../public/assets/images/sun.webp";
 import { links } from "../../../constants/navbarLinks";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 function NavbarDesktop() {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const router = useRouter()
+  const router = useRouter();
 
   const toggleTheme = () => {
     const newTheme = resolvedTheme === "light" ? "dark" : "light";
