@@ -4,11 +4,11 @@
 
 @layer components {
   body {
-    @apply bg-white dark:bg-[#191919] select-none;
+    @apply bg-white dark:bg-[#191919] select-none px-4 2xl:px-0;
   }
 
   .app-container {
-    @apply mx-auto flex w-full max-w-[1300px] flex-1 flex-col px-4 font-Poppins dark:bg-[#191919] 2xl:px-0;
+    @apply mx-auto flex w-full max-w-[1300px] flex-1 flex-col font-Poppins dark:bg-[#191919] 2xl:px-0;
   }
   .right-box {
     @apply h-full max-h-[600px] max-w-[600px] xl:flex-1;
@@ -20,10 +20,10 @@
     @apply bg-gradient-to-r from-[#00C0FD] to-[#E70FAA] bg-clip-text text-transparent;
   }
   .navbar-link-desktop {
-    @apply navbar-text-hover dark:navbar-text-hover font-DMSans text-xl font-medium text-[#666] dark:text-[#A7A7A7];
+    @apply navbar-text-hover dark:navbar-text-hover font-DMSans text-xl font-medium text-[#666] dark:text-[#A7A7A7] after:content-[""] after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-[#00C0FD] after:to-[#E70FAA] after:transition-all after:ease-in-out after:duration-500 after:-translate-x-[100%] overflow-hidden after:hover:translate-x-0;
   }
   .navbar-link-desktop-active {
-    @apply text-gradient font-DMSans text-xl font-medium;
+    @apply text-gradient font-DMSans text-xl font-medium after:content-[""] after:absolute after:-bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-[#00C0FD] after:to-[#E70FAA] after:transition-all after:ease-in-out after:duration-500;
   }
   .navbar-link {
     @apply font-DMSans text-xl font-medium text-[#666] dark:text-[#A7A7A7];

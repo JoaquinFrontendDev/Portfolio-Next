@@ -1,9 +1,6 @@
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import Moon from "../../../public/assets/images/moon.webp";
-import Sun from "../../../public/assets/images/sun.webp";
 import { links } from "../../../constants/navbarLinks";
 import { useRouter } from "next/router";
 
@@ -32,20 +29,16 @@ function NavbarDesktop() {
         className="h-10 w-10 cursor-pointer items-center rounded-xl border border-gray-200 bg-slate-100 p-2 dark:border-gray-600 dark:bg-gray-700"
       >
         {resolvedTheme === "light" ? (
-          <Image
-            src={Moon}
+          <img
+            src="assets/images/moon.webp"
             alt="moon-image"
-            width={25}
-            height={25}
-            draggable={false}
+            className="h-[25px] w-[25px]"
           />
         ) : (
-          <Image
-            src={Sun}
+          <img
+            src="assets/images/sun.webp"
             alt="sun-image"
-            width={25}
-            height={25}
-            draggable={false}
+            className="h-[25px] w-[25px]"
           />
         )}
       </div>
@@ -60,8 +53,8 @@ function NavbarDesktop() {
                     <div
                       className={
                         router.pathname === link.href
-                          ? "navbar-link-desktop-active"
-                          : "navbar-link-desktop"
+                          ? "navbar-link-desktop-active relative"
+                          : "navbar-link-desktop relative"
                       }
                     >
                       {link.label}

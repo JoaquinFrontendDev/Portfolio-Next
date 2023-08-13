@@ -1,6 +1,5 @@
 import React from "react";
 import { products } from "../../../constants/productsData";
-import Image from "next/image";
 import Link from "next/link";
 import { LinkIcon } from "@heroicons/react/24/outline";
 
@@ -10,27 +9,21 @@ const WorkCard = ({ id, img, title, description, stack, link, github }) => {
   }
 
   return (
-    <div className="flex h-full max-h-[570px] w-full max-w-[375px] flex-col font-Poppins">
-      <Image
+    <div className="flex h-full max-h-[570px] w-full max-w-[375px] flex-col font-Poppins md:max-h-[350px] md:max-w-full md:flex-row lg:max-h-[570px] lg:max-w-[375px] lg:flex-col justify-center">
+      <img
         src={img}
         alt={`project-img-${id}`}
-        width={"100%"}
-        height={260}
-        objectFit="cover"
-        objectPosition="center"
-        unoptimized={true}
-        className="rounded-t-[20px]"
-        draggable={false}
+        className="h-[260px] w-full rounded-t-[20px] object-cover object-center md:h-[350px] md:min-w-[350px] md:rounded-l-[20px] md:rounded-r-[0px] lg:h-[255px] lg:w-full lg:rounded-t-[20px] lg:rounded-bl-[0px]"
       />
-      <div className="relative flex flex-col rounded-b-[20px] bg-[#FFFFFF] p-[30px] shadow-card dark:bg-[#363636]">
+      <div className="relative flex flex-col rounded-b-[20px] bg-[#FFFFFF] p-[30px] shadow-card dark:bg-[#363636] md:rounded-l-[0px] md:rounded-r-[20px] lg:rounded-b-[20px] lg:rounded-tr-[0px]">
         <div className="absolute right-2 top-2 rounded-lg bg-black px-3 py-2 font-mono text-sm font-extrabold text-white shadow-card dark:bg-white dark:text-black">{`0${id.toString()}`}</div>
         <div className="text-[24px] font-medium dark:text-[#CCC]">{title}</div>
-        <div className="mt-4 line-clamp-5 h-full max-h-[130px] text-base font-light text-[#666] dark:text-[#CCC]">
+        <div className="mt-4 line-clamp-5 h-fit text-base font-light text-[#666] dark:text-[#CCC] md:line-clamp-6 lg:line-clamp-5">
           {description}
         </div>
-        <div className="mt-3 text-base font-normal text-[#42446E] dark:text-[#CCC]">
-          Tech Stack:{" "}
-          <span className="text-sm font-light text-[#42446E] dark:text-[#CCC]">
+        <div className="pt-3 text-base font-normal text-[#42446E] dark:text-[#CCC] md:mt-auto lg:mt-0 flex items-center gap-1">
+          <span className=' whitespace-nowrap'>Tech Stack:</span>
+          <span className="text-sm font-light text-[#42446E] dark:text-[#CCC] whitespace-nowrap text-ellipsis overflow-hidden">
             {stack}
           </span>
         </div>
